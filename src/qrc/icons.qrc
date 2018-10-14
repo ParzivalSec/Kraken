@@ -1,0 +1,9 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+    <file>../../resources/icons/plus.png</file>
+    <file>../../resources/icons/delete.png</file>
+    <file>../../resources/icons/help.png</file>
+    <file>../../resources/icons/check.png</file>
+    <file>../../resources/icons/kraken.png</file>
+</qresource>
+</RCC>
