@@ -3,6 +3,7 @@
 
 #include "KEditor.h"
 #include "KTaskBar.h"
+#include "KSettings.h"
 
 namespace krk
 {
@@ -16,13 +17,13 @@ namespace krk
 		KApplication& operator=(const KApplication& other) = delete;
 		KApplication& operator=(KApplication&& other) = delete;
 
+		bool Initialize(void);
+		void Run();
+		
 		~KApplication(void);
 
 	private:
-		void CreateDefaultSettings(void);
-		void LoadSettings(void);
-
-
+		KSettings mSettings;
 		KEditor mEditor;
 		KTaskBar mTaskBar;
 	};

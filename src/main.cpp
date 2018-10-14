@@ -1,9 +1,11 @@
 #include "qapplication.h"
 #include "ui_KrakenEditor.h"
+#include "kraken/KApplication.h"
 
 int main(int argc, char** argv)
 {
 	QApplication app(argc, argv);
+	krk::KApplication krakenApp;
 
 	// --> KrakenApplication:
 	// 1. Load AppSettings.ini and all projects in the project folder
@@ -21,11 +23,20 @@ int main(int argc, char** argv)
 	// 3. Category-less commands are on the same level as other categories
 	// 4. Option to close the application (Exit)
 
-	QWidget *widget = new QWidget;
-	Ui::KrakenEditor ui;
-	ui.setupUi(widget);
+	if (krakenApp.Initialize())
+	{
+		krakenApp.Run();
+		
+		QWidget *widget = new QWidget;
+		Ui::KrakenEditor ui;
+		ui.setupUi(widget);
 
-	widget->show();
+		widget->show();
+	}
+	else
+	{
+		// TODO: Display error prompt to the user that the app was not able to initialize
+	}
 
 	return QApplication::exec();
 }

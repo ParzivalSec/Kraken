@@ -3,7 +3,7 @@
 
 namespace helper
 {
-	inline bool FileExists(const char* path);
+	bool FileExists(const char* path);
 }
 
 #endif // _FILE_HELPER_H_

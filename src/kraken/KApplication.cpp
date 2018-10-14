@@ -1,35 +1,30 @@
 #include "KApplication.h"
-
 #include "../helper/FileHelper.h"
-
-namespace
-{
-	const char* APP_SETTINGS_PATH = "./app_settings.ini";
-}
 
 namespace krk
 {
-	KApplication::KApplication()
+	KApplication::KApplication() {}
+
+	bool KApplication::Initialize()
 	{
+		bool initializedWithoutError = false;
+
 		if (helper::FileExists(APP_SETTINGS_PATH))
 		{
-			LoadSettings();
+			initializedWithoutError = LoadSettings(mSettings);
 		}
 		else
 		{
-			CreateDefaultSettings();
+			initializedWithoutError = CreateDefaultSettings(mSettings);
 		}
+
+		return initializedWithoutError;
 	}
 
-	KApplication::~KApplication()
+	void KApplication::Run()
 	{
+		// Start the application
 	}
 
-	void KApplication::CreateDefaultSettings()
-	{
-	}
-
-	void KApplication::LoadSettings()
-	{
-	}
+	KApplication::~KApplication() {}
 }
