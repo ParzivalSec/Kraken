@@ -49,6 +49,7 @@ namespace krk
 		assert(jsonDocument.HasMember(PROJECT_NAME_KEY) && "Parsed content does not include the name property!");
 
 		project.name = jsonDocument[PROJECT_NAME_KEY].GetString();
+		project.path = path;
 		// TODO: Load other members (commands, variables, categories)
 
 		return true;

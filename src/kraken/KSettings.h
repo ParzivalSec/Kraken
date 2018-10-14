@@ -10,10 +10,12 @@ namespace krk
 	struct KSettings
 	{
 		QString activeProject;
+		QString projectFolder;
 	};
 
-	bool CreateDefaultSettings(KSettings& setting);
+	KSettings CreateDefaultSettings(void);
 	bool LoadSettings(KSettings& settings);
+	bool SaveSettings(const KSettings& settings);
 }
 
 #endif // _K_SETTINGS_H_

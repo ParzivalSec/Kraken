@@ -1,9 +1,12 @@
 #ifndef _K_APPLICATION_H_
 #define _K_APPLICATION_H_
 
+#include <QVector>
+
 #include "KEditor.h"
 #include "KTaskBar.h"
 #include "KSettings.h"
+#include "KProject.h"
 
 namespace krk
 {
@@ -23,9 +26,13 @@ namespace krk
 		~KApplication(void);
 
 	private:
+		bool LoadAllProjects(void);
+
+
 		KSettings mSettings;
 		KEditor mEditor;
 		KTaskBar mTaskBar;
+		QVector<KProject> mProjects;
 	};
 }
 

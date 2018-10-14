@@ -7,10 +7,11 @@
 int main(int argc, char** argv)
 {
 	QApplication app(argc, argv);
+
 	krk::KApplication krakenApp;
 
 	// --> KrakenApplication:
-	// 1. Load AppSettings.ini and all projects in the project folder
+	// 1. Load AppSettings.ini [X] and all projects in the project folder
 	// 2. Check if there is any active project -> if there is, create taskbar menu for that project
 	// 3. Otherwise open up the project editor 
 
