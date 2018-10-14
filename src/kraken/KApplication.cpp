@@ -9,6 +9,7 @@ namespace krk
 	{
 		bool initializedWithoutError = false;
 
+		// Setup app settings (load or create)
 		if (helper::FileExists(APP_SETTINGS_PATH))
 		{
 			initializedWithoutError = LoadSettings(mSettings);
@@ -18,12 +19,15 @@ namespace krk
 			initializedWithoutError = CreateDefaultSettings(mSettings);
 		}
 
+		// Setup active project (load if exists, otherwise open editor)
+
+
 		return initializedWithoutError;
 	}
 
-	void KApplication::Run()
+	void KApplication::Start()
 	{
-		// Start the application
+		// Show either editor, or populate the sys-tray menu
 	}
 
 	KApplication::~KApplication() {}

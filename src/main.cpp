@@ -1,6 +1,8 @@
 #include "qapplication.h"
 #include "ui_KrakenEditor.h"
 #include "kraken/KApplication.h"
+#include "kraken/KProject.h"
+#include <iostream>
 
 int main(int argc, char** argv)
 {
@@ -25,12 +27,9 @@ int main(int argc, char** argv)
 
 	if (krakenApp.Initialize())
 	{
-		krakenApp.Run();
-		
 		QWidget *widget = new QWidget;
 		Ui::KrakenEditor ui;
 		ui.setupUi(widget);
-
 		widget->show();
 	}
 	else

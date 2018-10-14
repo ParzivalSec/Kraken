@@ -18,7 +18,7 @@ namespace krk
 		KApplication& operator=(KApplication&& other) = delete;
 
 		bool Initialize(void);
-		void Run();
+		void Start(void);
 		
 		~KApplication(void);
 
